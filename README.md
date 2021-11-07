@@ -65,7 +65,7 @@
 ```bash
   skx create-react-app
   # or
-  skx dlx create-react-app
+  skn dlx create-react-app
 ```
 
 ### other
