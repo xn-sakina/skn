@@ -27,13 +27,14 @@
   "scripts": {
     "test": "jest",
     "test:ts": "ts-node ./test/skn.ts",
-    "test:add": "npm_config_registry=http://localhost:4873/ yarn global add @fz6m/skn",
+    "test:install": "npm_config_registry=http://localhost:4873/ yarn global add @fz6m/skn",
+    "test:remove": "yarn global remove @fz6m/skn",
+    "test:push": "npm publish --registry=http://localhost:4873/",
     "build": "rimraf dist && tsc",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build",
-    "push": "pnpm publish --registry=https://registry.npmjs.org/ --no-git-checks",
-    "fix": "prettier -c --write \"src/**/*.{js,ts,tsx}\"",
-    "test:push": "pnpm publish --registry=http://localhost:4873/ --no-git-checks"
+    "push": "npm publish --registry=https://registry.npmjs.org/",
+    "fix": "prettier -c --write \"src/**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
