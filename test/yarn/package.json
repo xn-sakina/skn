@@ -1,0 +1,9 @@
+{
+  "name": "yarn",
+  "version": "1.0.0",
+  "description": "yarn test package",
+  "scripts": {
+    "test": "echo \"test\"",
+    "dev": "echo \"dev\""
+  }
+}

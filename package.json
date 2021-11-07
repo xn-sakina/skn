@@ -1,0 +1,73 @@
+{
+  "name": "@fz6m/skn",
+  "version": "1.0.2",
+  "author": "fz6m",
+  "description": "General package management tool, compatible with npm/yarn/pnpm",
+  "homepage": "https://github.com/fz6m/skn#README",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fz6m/skn"
+  },
+  "keywords": [
+    "sakina",
+    "common-package-management",
+    "npm",
+    "yarn",
+    "pnpm"
+  ],
+  "bin": {
+    "skn": "bin/skn.js",
+    "skx": "bin/skx.js",
+    "sakina": "bin/sakina.js"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:ts": "ts-node ./test/skn.ts",
+    "test:add": "npm_config_registry=http://localhost:4873/ yarn global add @fz6m/skn",
+    "build": "rimraf dist && tsc",
+    "prepare": "husky install",
+    "prepublishOnly": "pnpm build",
+    "push": "pnpm publish --registry=https://registry.npmjs.org/ --no-git-checks",
+    "fix": "prettier -c --write \"src/**/*.{js,ts,tsx}\"",
+    "test:push": "pnpm publish --registry=http://localhost:4873/ --no-git-checks"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "@fz6m/eslint-plugin-sakina": "^1.0.6",
+    "@types/fs-extra": "^9.0.13",
+    "@types/ini": "^1.3.31",
+    "@types/jest": "^27.0.2",
+    "@types/lodash": "^4.14.176",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
+    "jest": "^27.3.1",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.11.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "execa": "^5.1.1",
+    "find-up": "^5.0.0",
+    "fs-extra": "^10.0.0",
+    "ini": "^2.0.0",
+    "lodash": "^4.17.21",
+    "read-pkg-up": "^7.0.1",
+    "yargs": "^17.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}

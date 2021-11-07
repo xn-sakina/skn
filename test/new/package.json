@@ -1,0 +1,8 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "new test package",
+  "scripts": {
+    "test": "echo \"test\""
+  }
+}
